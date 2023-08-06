@@ -14,7 +14,7 @@ Welcome to the Flask App Deployment guide! This repository provides you with ste
 1. **Fork this Repository:** Fork this repository to your GitHub account. This creates a personal copy of the repository that you can modify and deploy.
 
 2. **Clone Your Fork:** Clone the forked repository to your local machine using the following command:
-
+   ```sh
    git clone https://github.com/YourGitHubUsername/YourGitHubRepo.git
 
 - Modify the App (Optional): Make any necessary improvements or modifications to the Flask app on your local machine and push it to your remote repo.
@@ -25,16 +25,20 @@ Follow these steps to deploy your modified Flask app to Azure Web App:
 
 1. Log in to Azure: Open your terminal or command prompt and log in to your Azure account using the Azure CLI:
 
-az login
+   ```sh
+   az login
 
 2. Create Resources: If needed, create a resource group and an Azure App Service Plan:
 
-az group create --name YourResourceGroupName --location YourAzureRegion
-az appservice plan create --name YourAppServicePlanName --resource-group YourResourceGroupName --sku FREE --is-linux
+   ```sh
+   az group create --name YourResourceGroupName --location YourAzureRegion
+   
+   az appservice plan create --name YourAppServicePlanName --resource-group YourResourceGroupName --sku FREE --is-linux
 
 3. Deploy to Azure Web App: Run the following command to deploy your app to Azure:
-
-az webapp create --name YourWebAppName --resource-group YourResourceGroupName --plan YourAppServicePlanName --runtime "PYTHON|3.8" --deployment-source-url https://github.com/YourGitHubUsername/YourGitHubRepo.git --deployment-source-branch main
+   
+   ```sh
+   az webapp create --name YourWebAppName --resource-group YourResourceGroupName --plan YourAppServicePlanName --runtime "PYTHON|3.8" --deployment-source-url    https://github.com/YourGitHubUsername/YourGitHubRepo.git --deployment-source-branch main
 
 ## Accessing Your Deployed App:
 
