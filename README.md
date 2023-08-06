@@ -52,10 +52,10 @@ https://YourWebAppName.azurewebsites.net
 
 Congratulations! You've successfully deployed your Flask app to Azure Web App.
 
-## Redeploying the App
+## Redeploying the App:
 If you need to redeploy your app with the latest code changes, you can use the following command:
 
-- Below command tells Azure to sync and redeploy your web app using the source code.
+- Below command tells Azure to sync and redeploy your web app using the latest source code.
 
    ```sh
    az webapp deployment source sync --name YourWebAppName --resource-group YourResourceGroupName
