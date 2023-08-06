@@ -29,12 +29,12 @@ Follow these steps to deploy your modified Flask app to Azure Web App:
    ```sh
    az login
 
-2. Create Resources: If needed, create a resource group
+2. Create Resources: If needed, create a resource group:
 
     ```sh
    az group create --name YourResourceGroupName --location YourAzureRegion
     
-3. Create and an Azure App Service Plan for Web App before creating it:
+3. Create an Azure App Service Plan for Web App:
    
      ```sh
     az appservice plan create --name YourAppServicePlanName --resource-group YourResourceGroupName --sku FREE --is-linux
