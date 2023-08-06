@@ -7,6 +7,7 @@ Welcome to the Flask App Deployment guide! This repository provides you with ste
 - [Getting Started](#getting-started)
 - [Deployment Instructions](#deployment-instructions)
 - [Accessing Your Deployed App](#accessing-your-deployed-app)
+- [Redeploying the App](#redeploying-the-app)
 - [Contributing](#contributing)
 
 ## Getting Started:
@@ -28,17 +29,17 @@ Follow these steps to deploy your modified Flask app to Azure Web App:
    ```sh
    az login
 
-2. Create Resources: If needed, create a resource group and an Azure App Service Plan:
+2. Create Resources: If needed, create a resource group
 
     ```sh
    az group create --name YourResourceGroupName --location YourAzureRegion
+    
+3. Create and an Azure App Service Plan for Web App before creating it:
    
-   Azure App Service Plan:
-
-    ```sh
-   az appservice plan create --name YourAppServicePlanName --resource-group YourResourceGroupName --sku FREE --is-linux
-
-3. Deploy to Azure Web App: Run the following command to deploy your app to Azure:
+     ```sh
+    az appservice plan create --name YourAppServicePlanName --resource-group YourResourceGroupName --sku FREE --is-linux
+     
+4. Deploy to Azure Web App: Run the following command to deploy your app to Azure:
    
    ```sh
    az webapp create --name YourWebAppName --resource-group YourResourceGroupName --plan YourAppServicePlanName --runtime "PYTHON|3.8" --deployment-source-url    https://github.com/YourGitHubUsername/YourGitHubRepo.git --deployment-source-branch main
@@ -58,9 +59,6 @@ If you need to redeploy your app with the latest code changes, you can use the f
 
    ```sh
    az webapp deployment source sync --name YourWebAppName --resource-group YourResourceGroupName
-
-
-
 
 ## Contributing:
 
